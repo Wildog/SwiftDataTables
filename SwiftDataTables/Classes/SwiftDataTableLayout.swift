@@ -11,7 +11,7 @@ import UIKit
 class SwiftDataTableLayout: UICollectionViewFlowLayout {
     
     //MARK: - Properties
-    fileprivate(set) open var dataTable: SwiftDataTable
+    fileprivate(set) open unowned var dataTable: SwiftDataTable
     var insertedIndexPaths = NSMutableArray()
     var removedIndexPaths = NSMutableArray()
     var insertedSectionIndices = NSMutableArray()

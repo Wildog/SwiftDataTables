@@ -93,7 +93,7 @@ public class SwiftDataTable: UIView {
         return collectionView
     }()
     
-    fileprivate(set) var layout: SwiftDataTableLayout? = nil {
+    fileprivate(set) weak var layout: SwiftDataTableLayout? = nil {
         didSet {
             if let layout = layout {
                 self.collectionView.collectionViewLayout = layout
@@ -815,7 +815,7 @@ extension SwiftDataTable: UISearchBarDelegate {
                     self.collectionView.insertSections([currentIndex])
                 }
             }
-        }, completion: { finished in
+        }, completion: { [unowned self] finished in
             self.collectionView.reloadItems(at: self.collectionView.indexPathsForVisibleItems)
             if animations == false {
                 UIView.setAnimationsEnabled(true)

@@ -15,7 +15,7 @@ public class DataHeaderFooterViewModel: DataTableSortable {
     //MARK: - Properties
     let data: String
     var indexPath: IndexPath! // Questionable
-    var dataTable: SwiftDataTable!
+    unowned var dataTable: SwiftDataTable!
     
     public var sortType: DataTableSortType
     
